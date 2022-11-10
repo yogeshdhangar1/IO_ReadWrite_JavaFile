@@ -18,6 +18,11 @@ public class TestCasesForJavaIO {
         Files.deleteIfExists(Paths.get("C:\\IntelliJ workplace\\File_IO_WatchService\\PayRoll.txt"));
         Assert.assertTrue(Files.notExists(playPath));
     }
-    
+    @Test
+    public void givenPathCreateTheDirectory() throws IOException {
+        Path playPath=Paths.get("C:\\intallije workplace\\File_IO_WatchService\\"+"/"+"JavaProgram.txt");
+        Files.createDirectory(playPath);
+        Assert.assertTrue(Files.exists(playPath));
+    }
 }
 
