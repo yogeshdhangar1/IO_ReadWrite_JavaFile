@@ -24,5 +24,12 @@ public class TestCasesForJavaIO {
         Files.createDirectory(playPath);
         Assert.assertTrue(Files.exists(playPath));
     }
+    @Test
+    public void givenPathCreateTheFileInGivenDirectory() throws IOException {
+        Path playPath=Paths.get("C:\\intallije workplace\\File_IO_WatchService\\");
+        Path tempFile=Paths.get(playPath+"/temp"+"Demo.txt");
+        Files.createFile(tempFile);
+        Assert.assertTrue(Files.exists(tempFile));
+    }
 }
 
