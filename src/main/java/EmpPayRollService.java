@@ -16,12 +16,17 @@ public class EmpPayRollService {
         writing.add("Salary : 150000");
 //		File Exist => Override
         // Will create new file if not exist
-        Files.write(Paths.get("C:\\intallije workplace\\File_IO_WatchService\\Test.txt"), writing, StandardOpenOption.CREATE);
+        Files.write(Paths.get("C:\\intallije workplace\\File_IO_WatchService\\Test1.txt"), writing, StandardOpenOption.CREATE);
         System.out.println("The Writing is done.......");
-    }
-    public static void main(String[] args) throws IOException, InterruptedException {
-  EmpPayRollService obj = new EmpPayRollService();
-      obj.listFilesDirectory();
-    }
+
+        List<String> line=	Files.readAllLines(Paths.get("C:\\intallije workplace\\File_IO_WatchService\\Test1.txt"));
+        for(String lines:line) {
+            System.out.println(lines);
+        }
     }
 
+    public static void main(String[] args) throws IOException, InterruptedException {
+        EmpPayRollService obj = new EmpPayRollService();
+        obj.listFilesDirectory();
+    }
+}
